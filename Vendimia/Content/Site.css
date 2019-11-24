@@ -1,0 +1,99 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.container {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.row{
+    margin-top:10px !important;
+}
+
+hr {
+    margin-bottom: -1px !important;
+    margin-top: 1px !important;
+    border-top: 4px solid darkturquoise !important;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white !important;
+    font-size: 20px !important;
+}
+
+.dropdown-menu > li > a {
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    color: black !important;
+}
+
+.right {
+    color: white !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    padding-top: 11px !important;
+    float: right;
+}
+
+.btnright {
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    float: right;
+}
+
+.btnright > button {
+    background-color: midnightblue !important;
+    color: white !important;
+}
+
+.form-control{
+    margin-top: 15px !important;
+}
+
+.table-responsive { 
+    overflow-x: inherit !important;
+}
+
+.h4 {
+    color: white !important;
+    background-color: royalblue !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-left: 5px !important;
+    border-radius: 6px !important;
+}
+
+.centered
+{
+    margin-top:0px !important;
+}
+
+.littledown {
+    margin-top: 15px !important;
+}

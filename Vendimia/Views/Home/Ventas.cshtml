@@ -1,0 +1,32 @@
+﻿<div class="container">
+    <div class="btnright">
+        <button class="btn" onclick="location.href= '@Url.Action("NuevaVenta", "Home" )'"><i class="fa fa-plus"></i> Nueva Venta</button>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <span style="color:darkturquoise">Ventas Activas</span>
+        </div>
+        <div class="col-lg-6">
+            <span></span>
+        </div>
+    </div>
+    <hr style="border-color:darkturquoise" />
+</div>
+<div class="table-responsive">
+    <table class="table">
+        <thead style="background-color:#CCCCFE">
+            <tr style="color:blue">
+                <th>Folio Venta</th>
+                <th>Clave Cliente</th>
+                <th>Nombre</th>
+                <th>Total</th>
+                <th>Fecha</th>
+                <th>Estatus</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<hr />
+<footer>
+    <p>&copy; @DateTime.Now.Year - Vendimia by Luis Angel Sotelo Hernández</p>
+</footer>

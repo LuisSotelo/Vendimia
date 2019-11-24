@@ -1,0 +1,71 @@
+﻿@model Vendimia.Models.VentaModel
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#cliente").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/Home/buscaNombre",
+                    type: "POST",
+                    dataType: "json",
+                    data: { Prefix: request.term },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            if ($("#cliente").val().length > 2) {
+                                $("#ui-id-1").click(function (e) {
+                                    $("#RFC").html('RFC:' + item.RFC);
+                                });
+                                return { label: item.Nombre, value: item.Nombre };                               
+                            }
+                        }))                       
+                    }
+                })
+            },
+            messages: {
+                noResults: "", results: ""
+            }
+        });
+    })
+</script>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container" style="border:solid;color:royalblue;margin-top:10px;border-radius:10px;">
+        <div class="h4">Registro de Ventas</div>
+        <form id="BuscarVenta">
+            <div class="btnright">
+                <span style="color:limegreen">Folio Venta: 0001</span>
+            </div>
+            <div class="form-group form-inline littledown">
+                <label for="cliente">Cliente</label>
+                @*<input class="form-control centered" id="cliente" placeholder="Buscar Cliente...">*@
+                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control centered", placeholder = "Buscar Cliente...", id = "cliente" } })
+                <span><strong id="RFC">RFC: SOHL921101F09</strong></span>
+            </div>
+            <hr />
+            <div class="form-group form-inline littledown">
+                <label for="articulo">Articulo</label>
+                <input class="form-control centered" id="articulo" placeholder="Buscar Articulo...">
+                <button class="btn" onclick="location.href= '/Home/NuevaVenta'"><i class="fa fa-plus"></i></button>                
+            </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Descripción Articulo</th>
+                        <th>Modelo</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Importe</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Vendimia by Luis Angel Sotelo Hernández</p>
+    </footer>
+
+}
